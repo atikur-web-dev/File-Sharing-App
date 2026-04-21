@@ -1,0 +1,25 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Environment files 
+**/.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# Backend specific
+Backend/node_modules/
+Backend/dist/
+Backend/src/tmp/
+
+# Frontend specific
+Frontend/node_modules/
+Frontend/dist/
+Frontend/.next/
+Frontend/out/
