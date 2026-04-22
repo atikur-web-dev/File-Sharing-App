@@ -1,0 +1,32 @@
+import { Request, Response, NextFunction, ErrorRequestHandler } from "express";
+import { ApiError } from "../Utils/apiError.ts";
+import { config } from "../Config/config.ts";
+
+export const errorHandler: ErrorRequestHandler = (
+  err: any,
+  _req: Request,
+  res: Response,
+  _next: NextFunction,
+) => {
+  if (err instanceof ApiError) {
+    return res.status(err.statusCode).json({
+      success: err.status,
+      message: err.message,
+      errors: err.errors,
+      ...(config.nodeEnv === "development" && {
+        // show stack only in development phase
+        stack: err.stack,
+      }),
+    });
+  }
+  //others error
+  const message = err instanceof Error ? err.message : "Internal Server Error";
+
+  return res.status(500).json({
+    success: false,
+    message,
+    ...(config.nodeEnv === "development" && {
+      stack: err instanceof Error ? err.stack : String(err),
+    }),
+  });
+};
