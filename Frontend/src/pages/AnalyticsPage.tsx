@@ -8,7 +8,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { Navbar } from '../components/layout/Navbar';
 import { Card } from '../components/common/Card';
-import { DownloadChart } from '../components/analytics/DownloadChart';
+import { DownloadChart } from '../components/auth/analytics/DownloadChart';
 import { useAuth } from '../hooks/useAuth';
 import { getDownloadStatsApi,type  DownloadStats } from '../api/analyticsApi';
 
