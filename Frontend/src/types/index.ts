@@ -19,8 +19,8 @@ export interface FileType {
   viewUrl?: string;
   uploadedAt: string;
   uploadedBy?: string;
+  downloadCount?: number;
 }
-
 export interface FileUploadResponse {
   fileName: string;
   originalName: string;
@@ -81,7 +81,6 @@ export interface ChangePasswordData {
   newPassword: string;
 }
 
-
 export interface RegisterResponseData {
   user: User;
 }
@@ -89,7 +88,6 @@ export interface RegisterResponseData {
 export interface LoginResponseData {
   user: User;
 }
-
 
 export interface DownloadStats {
   totalDownloads: number;
@@ -100,11 +98,10 @@ export interface DownloadStats {
   }[];
 }
 
-
 export interface FileQueryOptions {
   page?: number;
   limit?: number;
   search?: string;
-  sortBy?: 'createdAt' | 'size' | 'fileName';
-  sortOrder?: 'asc' | 'desc';
+  sortBy?: "createdAt" | "size" | "fileName";
+  sortOrder?: "asc" | "desc";
 }

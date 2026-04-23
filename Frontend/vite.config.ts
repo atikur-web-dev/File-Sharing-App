@@ -1,44 +1,49 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
-import path from "path";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
 
-// https://vite.dev/config/
+
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(), 
+  ],
+  
+  
   resolve: {
-    // path elies configaration
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-      "@components": path.resolve(__dirname, "./src/components"),
-      "@lib": path.resolve(__dirname, "./src/lib"),
-      "@hooks": path.resolve(__dirname, "./src/hooks"),
-      "@contexts": path.resolve(__dirname, "./src/contexts"),
-      "@pages": path.resolve(__dirname, "./src/pages"),
-      "@types": path.resolve(__dirname, "./src/types"),
-      "@api": path.resolve(__dirname, "./src/api"),
-      "@assets": path.resolve(__dirname, "./src/assets"),
+      '@': path.resolve(__dirname, './src'),
+      '@components': path.resolve(__dirname, './src/components'),
+      '@lib': path.resolve(__dirname, './src/lib'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@contexts': path.resolve(__dirname, './src/contexts'),
+      '@pages': path.resolve(__dirname, './src/pages'),
+      '@types': path.resolve(__dirname, './src/types'),
+      '@api': path.resolve(__dirname, './src/api'),
+      '@assets': path.resolve(__dirname, './src/assets'),
     },
   },
-  // Development server configaretion
+  
+  // Development Server configarestion
   server: {
     port: 3000,
     open: true,
     cors: true,
-    // API proxy
     proxy: {
-      "/api": {
-        target: "http://localhost:8000",
+      '/api': {
+        target: 'http://localhost:8000',
         changeOrigin: true,
         secure: false,
       },
     },
   },
-  // build option
+  
+  // বিল্ড অপশন
   build: {
-    outDir: "dist",
+    outDir: 'dist',
     sourcemap: true,
-    target: "es2020",
+    target: 'es2020',
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -58,7 +63,7 @@ export default defineConfig({
       },
     },
   },
-
-  // environment variable prefix
-  envPrefix: "VITE_",
+  
+  envPrefix: 'VITE_',
 });
+

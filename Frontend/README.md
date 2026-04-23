@@ -1,73 +1,94 @@
-# React + TypeScript + Vite
+# FileShare
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A file sharing app I built to learn modern React development. Upload files, get shareable links, and track downloads.
 
-Currently, two official plugins are available:
+## What It Does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Upload files by dragging and dropping
+- Get public links to share with anyone
+- See who downloaded your files (analytics dashboard)
+- Manage your profile and password
+- Works on mobile and desktop
 
-## React Compiler
+## Tech I Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React, TypeScript, Tailwind CSS, Framer Motion, Recharts, React Hook Form, Zod, Axios.
 
-## Expanding the ESLint configuration
+## Quick Start
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+npm install
+npm run dev
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Project Structure
+src/
+├── api/                   
+│   ├── analyticsApi.ts     
+│   ├── authApi.ts         
+│   ├── axios.ts           
+│   └── fileApi.ts          
+│
+├── assets/              
+│   └── logo.svg           
+│
+├── components/          
+│   ├── analytics/          
+│   │   └── DownloadChart.tsx
+│   ├── auth/              
+│   │   ├── LoginForm.tsx
+│   │   └── RegisterForm.tsx
+│   ├── common/            
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── ErrorBoundary.tsx
+│   │   ├── Input.tsx
+│   │   ├── LoadingSkeleton.tsx
+│   │   ├── Modal.tsx
+│   │   └── PageTransition.tsx
+│   ├── dashboard/       
+│   │   ├── SearchBar.tsx
+│   │   └── SortDropdown.tsx
+│   ├── files/              
+│   │   ├── FileCard.tsx
+│   │   ├── FileList.tsx
+│   │   ├── FileUpload.tsx
+│   │   └── Pagination.tsx
+│   ├── layout/             
+│   │   ├── Navbar.tsx
+│   │   └── ThemeToggle.tsx
+│   └── profile/          
+│       ├── ChangePasswordForm.tsx
+│       └── ProfileForm.tsx
+│
+├── contexts/             
+│   ├── AuthContext.tsx
+│   ├── AuthProvider.tsx
+│   ├── ThemeContext.tsx
+│   └── ThemeProvider.tsx
+│
+├── hooks/               
+│   ├── useAuth.ts
+│   ├── useCopyToClipboard.ts
+│   ├── useMediaQuery.ts
+│   └── useTheme.ts
+│
+├── lib/                
+│   ├── constants.ts
+│   └── utils.ts
+│
+├── pages/                  
+│   ├── AnalyticsPage.tsx
+│   ├── DashboardPage.tsx
+│   ├── FileSharePage.tsx
+│   ├── HomePage.tsx
+│   ├── LoginPage.tsx
+│   ├── NotFoundPage.tsx
+│   ├── ProfilePage.tsx
+│   └── RegisterPage.tsx
+│
+├── types/                  
+│   └── index.ts
+│
+├── App.tsx                
+├── index.css              
+└── main.tsx                
