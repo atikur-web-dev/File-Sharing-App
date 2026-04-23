@@ -62,12 +62,12 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
       <nav className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-accent-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-linear-to-br from-primary-600 to-accent-600 rounded-lg flex items-center justify-center">
                 <CloudArrowUpIcon className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold text-white">FileShare</span>
@@ -96,15 +96,15 @@ export const HomePage: React.FC = () => {
 
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] bg-primary-600/20 rounded-full blur-[128px]" />
-          <div className="absolute -bottom-1/2 -left-1/4 w-[800px] h-[800px] bg-accent-600/20 rounded-full blur-[128px]" />
+          <div className="absolute -top-1/2 -right-1/4 w-200 h-200 bg-primary-600/20 rounded-full blur-[128px]" />
+          <div className="absolute -bottom-1/2 -left-1/4 w-200 h-200 bg-accent-600/20 rounded-full blur-[128px]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Secure File Sharing
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400">
+              <span className="block text-transparent bg-clip-text bg-linear-to-br from-primary-400 to-accent-400">
                 Made Simple
               </span>
             </h1>
@@ -183,7 +183,7 @@ export const HomePage: React.FC = () => {
 
       <section className="py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="backdrop-blur-xl bg-gradient-to-r from-primary-600/20 to-accent-600/20 rounded-3xl p-8 sm:p-12 border border-white/10 text-center">
+          <div className="backdrop-blur-xl bg-linear-to-br from-primary-600/20 to-accent-600/20 rounded-3xl p-8 sm:p-12 border border-white/10 text-center">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
               Ready to get started?
             </h2>
@@ -218,7 +218,7 @@ export const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 bg-gradient-to-br from-primary-600 to-accent-600 rounded flex items-center justify-center">
+              <div className="w-6 h-6 bg-linear-to-br from-primary-600 to-accent-600 rounded flex items-center justify-center">
                 <CloudArrowUpIcon className="w-4 h-4 text-white" />
               </div>
               <span className="text-white font-medium">FileShare</span>

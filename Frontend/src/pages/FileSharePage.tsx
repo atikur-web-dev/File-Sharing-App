@@ -87,7 +87,7 @@ export const FileSharePage: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center">
+      <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center">
         <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin" />
       </div>
     );
@@ -95,7 +95,7 @@ export const FileSharePage: React.FC = () => {
 
   if (error || !file) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-4">
         <Card className="max-w-md text-center backdrop-blur-xl bg-white/5 border-white/10">
           <div className="py-8">
             <div className="w-20 h-20 mx-auto bg-red-500/10 rounded-full flex items-center justify-center mb-6">
@@ -115,7 +115,7 @@ export const FileSharePage: React.FC = () => {
   const isImage = file.mimetype.startsWith('image/');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12 lg:py-16">
         <Card className="backdrop-blur-xl bg-white/5 border-white/10 overflow-hidden">
           <div className="p-6 sm:p-8 lg:p-10">
@@ -138,14 +138,14 @@ export const FileSharePage: React.FC = () => {
                 <img
                   src={getFileViewUrl(file.uuid)}
                   alt={file.originalName}
-                  className="w-full h-auto max-h-[400px] object-contain"
+                  className="w-full h-auto max-h-100 object-contain"
                 />
               </div>
             )}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div className="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
-                <CalendarIcon className="w-5 h-5 text-slate-400 flex-shrink-0" />
+                <CalendarIcon className="w-5 h-5 text-slate-400 shrink-0" />
                 <div>
                   <p className="text-xs text-slate-500">Uploaded</p>
                   <p className="text-sm text-white">{formatDate(file.uploadedAt, 'long')}</p>
@@ -153,7 +153,7 @@ export const FileSharePage: React.FC = () => {
               </div>
               
               <div className="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
-                <CubeIcon className="w-5 h-5 text-slate-400 flex-shrink-0" />
+                <CubeIcon className="w-5 h-5 text-slate-400 shrink-0" />
                 <div>
                   <p className="text-xs text-slate-500">Size</p>
                   <p className="text-sm text-white">{formatFileSize(file.size)}</p>

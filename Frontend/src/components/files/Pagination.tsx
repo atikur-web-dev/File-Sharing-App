@@ -71,7 +71,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                 variant={currentPage === page ? 'primary' : 'outline'}
                 size="sm"
                 onClick={() => onPageChange(page as number)}
-                className="min-w-[36px]"
+                className="min-w-9"
               >
                 {page}
               </Button>

@@ -16,7 +16,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       try {
         const currentUser = await getCurrentUserApi();
         setUser(currentUser);
-      } catch (error) {
+      } catch  {
         setUser(null);
       } finally {
         setIsLoading(false);

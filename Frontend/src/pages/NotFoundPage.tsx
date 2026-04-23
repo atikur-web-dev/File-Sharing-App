@@ -7,7 +7,7 @@ export const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-4">
       <div className="text-center">
         <h1 className="text-8xl sm:text-9xl font-bold text-white/10">404</h1>
         <h2 className="text-2xl sm:text-3xl font-bold text-white mt-4">Page Not Found</h2>

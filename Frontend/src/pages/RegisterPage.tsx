@@ -16,7 +16,7 @@ export const RegisterPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen relative flex items-center justify-center p-4 bg-gradient-to-br from-slate-50 via-purple-50 to-pink-100 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
+    <div className="min-h-screen relative flex items-center justify-center p-4 bg-linear-to-br from-slate-50 via-purple-50 to-pink-100 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -left-40 w-80 h-80 bg-purple-400/20 dark:bg-purple-600/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-pink-400/20 dark:bg-pink-600/10 rounded-full blur-3xl" />

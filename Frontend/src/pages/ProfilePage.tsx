@@ -28,7 +28,7 @@ export const ProfilePage: React.FC = () => {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
         <Navbar />
         <div className="flex items-center justify-center h-[calc(100vh-64px)]">
           <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -38,7 +38,7 @@ export const ProfilePage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
       <Navbar />
       
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
@@ -55,7 +55,7 @@ export const ProfilePage: React.FC = () => {
           <div className="lg:col-span-1">
             <Card className="backdrop-blur-xl bg-white/5 border-white/10">
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-primary-500 to-accent-600 rounded-full flex items-center justify-center">
+                <div className="w-20 h-20 mx-auto bg-linear-to-br from-primary-500 to-accent-600 rounded-full flex items-center justify-center">
                   <UserCircleIcon className="w-12 h-12 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mt-4">{user?.displayName}</h3>
@@ -64,16 +64,16 @@ export const ProfilePage: React.FC = () => {
               
               <div className="mt-6 pt-6 border-t border-white/10 space-y-3">
                 <div className="flex items-center gap-3 text-sm">
-                  <CalendarIcon className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                  <CalendarIcon className="w-4 h-4 text-slate-400 shrink-0" />
                   <span className="text-slate-400">Member since</span>
                   <span className="text-white ml-auto">
                     {user?.createdAt ? formatDate(user.createdAt, 'short') : 'Recently'}
                   </span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
-                  <IdentificationIcon className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                  <IdentificationIcon className="w-4 h-4 text-slate-400 shrink-0" />
                   <span className="text-slate-400">Account ID</span>
-                  <span className="text-white ml-auto font-mono text-xs truncate max-w-[120px]">
+                  <span className="text-white ml-auto font-mono text-xs truncate max-w-30">
                     {user?._id}
                   </span>
                 </div>

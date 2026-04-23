@@ -113,7 +113,7 @@
 
 @layer components {
   .gradient-bg {
-    @apply bg-gradient-to-br from-primary-500 to-accent-600;
+    @apply bg-linear-to-br from-primary-500 to-accent-600;
   }
 
   .glass-effect {
@@ -127,7 +127,8 @@
 
 @layer utilities {
   .text-truncate {
-    @apply overflow-hidden text-ellipsis whitespace-nowrap;
+    @apply overflow-hidden text-ellipsis;
+    white-space: nowrap;
   }
 
   .text-truncate-2 {

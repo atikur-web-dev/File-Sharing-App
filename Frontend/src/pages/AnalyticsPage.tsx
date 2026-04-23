@@ -45,7 +45,7 @@ export const AnalyticsPage: React.FC = () => {
 
   if (authLoading || isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
         <Navbar />
         <div className="flex items-center justify-center h-[calc(100vh-64px)]">
           <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -59,7 +59,7 @@ export const AnalyticsPage: React.FC = () => {
   const filesWithDownloads = stats?.filesByDownloads.filter(f => f.downloadCount > 0).length || 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
       <Navbar />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">

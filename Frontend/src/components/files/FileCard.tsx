@@ -73,7 +73,7 @@ export const FileCard: React.FC<FileCardProps> = ({ file, onDelete }) => {
     <>
       <Card hoverable className="h-full flex flex-col">
         <div className="flex items-start gap-3">
-          <div className={cn('flex-shrink-0', getFileIconColor(file.mimetype))}>
+          <div className={cn('shrink-0', getFileIconColor(file.mimetype))}>
             {getFileIcon(file.mimetype)}
           </div>
           

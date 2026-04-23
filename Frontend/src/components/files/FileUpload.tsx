@@ -212,10 +212,10 @@ export const FileUpload: React.FC<FileUploadProps> = ({ onUploadSuccess, onUploa
                     <img
                       src={file.preview}
                       alt={file.name}
-                      className="w-10 h-10 rounded object-cover flex-shrink-0"
+                      className="w-10 h-10 rounded object-cover shrink-0"
                     />
                   ) : (
-                    <div className="w-10 h-10 rounded bg-gray-200 dark:bg-gray-600 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded bg-gray-200 dark:bg-gray-600 flex items-center justify-center shrink-0">
                       {getFileIcon(file)}
                     </div>
                   )}
@@ -232,7 +232,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({ onUploadSuccess, onUploa
                 
                 <button
                   onClick={() => removeFile(index)}
-                  className="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors ml-2 flex-shrink-0"
+                  className="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors ml-2 shrink-0"
                 >
                   <XMarkIcon className="w-4 h-4 text-gray-500 dark:text-gray-400" />
                 </button>
