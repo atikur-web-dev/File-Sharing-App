@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, ErrorRequestHandler } from "express";
+import type { Request, Response, NextFunction, ErrorRequestHandler } from "express";
 import { ApiError } from "../Utils/apiError.ts";
 import { config } from "../Config/config.ts";
 

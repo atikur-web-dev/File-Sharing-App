@@ -8,6 +8,7 @@ import { errorHandler } from "./Middlewares/errorHandler.ts";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import { config } from "./Config/config.ts";
 
 const App = express();
 
@@ -20,7 +21,12 @@ App.use(express.static("public"));
 App.use(helmet());
 App.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: [
+      "http://localhost:3000", // React default prot
+      "http://localhost:5173",
+      config.APP_URL, // Vite default port
+    ],
+
     credentials: true,
   }),
 );

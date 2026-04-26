@@ -13,6 +13,10 @@ const userSchema = new Schema<IUser>(
       type: String,
       required: [true, "Password is required"],
     },
+    password: {
+      type: String,
+      required: [true, "Password is required"],
+    },
     emailVerification: {
       type: Date,
       default: null,
@@ -40,8 +44,10 @@ userSchema.pre("save", async function (next) {
   }
 });
 
-userSchema.methods.checkPassword = async function (password: string): Promise<boolean> {
-    return await compare(password, this.password);
-}
+userSchema.methods.checkPassword = async function (
+  password: string,
+): Promise<boolean> {
+  return await compare(password, this.password);
+};
 
-export const User = mongoose.models.User || model<IUser>("User", userSchema)
+export const User = mongoose.models.User || model<IUser>("User", userSchema);
