@@ -1,6 +1,8 @@
 import mongoose, { Schema, model } from "mongoose";
 import type { IUser } from "../Types/schema.js";
 import { hash, compare } from "bcryptjs";
+import * as jwt from "jsonwebtoken";
+import { config } from "../Config/config.ts";
 
 const userSchema = new Schema<IUser>(
   {
@@ -48,6 +50,37 @@ userSchema.methods.checkPassword = async function (
   password: string,
 ): Promise<boolean> {
   return await compare(password, this.password);
+};
+
+// Access token generator
+userSchema.methods.generateAccessToken = function (): string {
+  const userId = this._id.toString();
+  return jwt.sign(
+    {
+      _id: userId,
+      displayName: this.displayName,
+      email: this.email,
+      emailVerification: this.emailVerification,
+    },
+    String(config.ACCESS_TOKEN_SECRET_KEY),
+    {
+      expiresIn: config.ACCESS_TOKEN_EXPIRE as string | number,
+    } as jwt.SignOptions,
+  );
+};
+
+userSchema.methods.generateRefreshToken = function (): string {
+  const userId = this._id.toString();
+  return jwt.sign(
+    {
+      _id: userId,
+      email: this.email,
+    },
+    String(config.REFRESH_TOKEN_SECRET_KEY),
+    {
+      expiresIn: config.REFRESH_TOKENS_EXPIRE as string | number,
+    } as jwt.SignOptions,
+  );
 };
 
 export const User = mongoose.models.User || model<IUser>("User", userSchema);
