@@ -10,6 +10,6 @@ export class CreateResponse<T> extends ApiSuccess<T> {
 // Ok Response 
 export class OkResponse<T> extends ApiSuccess<T> {
   constructor(data?: T, message: string = "Ok") {
-    super(201, true, message, data);
+    super(200, true, message, data);
   }
 }
